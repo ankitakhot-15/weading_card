@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+    font-family: 'Noto Serif Devanagari', Georgia, serif;
+    background-color: #190307;
+    color: #FDF7EC;
+  }
+}
+
+.font-display-mr {
+  font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
+}
+
+.font-serif-mr {
+  font-family: 'Noto Serif Devanagari', Georgia, serif;
+}
+
+.font-ui-sans {
+  font-family: 'Plus Jakarta Sans', 'Noto Serif Devanagari', sans-serif;
+}
+
+/* Traditional Maharashtrian Paithani woven border accent */
+.paithani-border-strip {
+  height: 6px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    #8C1628 0px,
+    #8C1628 18px,
+    #C9973E 18px,
+    #C9973E 24px,
+    #1F4E3D 24px,
+    #1F4E3D 30px,
+    #C9973E 30px,
+    #C9973E 36px
+  );
+}
+
+/* 3D Door Perspective Container */
+.door-stage {
+  perspective: 1600px;
+  perspective-origin: 50% 45%;
+}
+
+.door-panel-left {
+  transform-origin: left center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.door-panel-right {
+  transform-origin: right center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Subtle gold hairline divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(197, 147, 62, 0.35) 20%,
+    rgba(197, 147, 62, 0.85) 50%,
+    rgba(197, 147, 62, 0.35) 80%,
+    transparent 100%
+  );
+}
+
+@keyframes goldTextSweep {
+  0% {
+    background-position: -120% 50%;
+  }
+  100% {
+    background-position: 220% 50%;
+  }
+}
+
+.gold-foil-text {
+  background: linear-gradient(
+    110deg,
+    #e5b963 0%,
+    #fff4d2 32%,
+    #d49b3b 52%,
+    #fff6dc 72%,
+    #e5b963 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: goldTextSweep 4.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
